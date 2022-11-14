@@ -8,7 +8,11 @@
 #define BITMAN_H
 
 #include <iostream>
+#include <bitset>
 
+
+
+    
 
 
 
