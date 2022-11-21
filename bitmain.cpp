@@ -1,7 +1,7 @@
 //bitmain.cpp
 //Kyle Coloma, Jason Lorenzo, Paolo Ong
 //ENGG 24-J
-//November 14, 2022
+//November 21, 2022
 
 #include "bitmanipulations.h"
 #include <sstream>
@@ -15,7 +15,7 @@ int main()
   bitset<32> x(bit);
 
   string command;
-  unsigned int bit_number;
+  int bit_number;
   string input;
 
   cout << x << endl;
@@ -23,9 +23,11 @@ int main()
   {
     unsigned int mask = 0x0F >> 3;
     bitset<32> y(mask);
+
     cout << "> ";
     getline(cin, input);
     stringstream ss1(input);
+
     if (ss1 >> command)
     {
       if (ss1 >> bit_number)
@@ -33,22 +35,24 @@ int main()
         y <<= bit_number;
         if (command=="on")
         {
-          cout << "Function on will turn " << bit_number << " on.\n";
           x |= y;
         }
         else if (command=="off")
         {
-          cout << "Function off will turn " << bit_number << " off.\n";
           x &= (~y);
         }
         else if (command=="toggle")
         {
-          cout << "Function toggle will toggle " << bit_number << ".\n";
           x ^= y;
         }
         else
         {
           cout << "Invalid command. Try again"<< endl;
+          continue;
+        }
+        if (bit_number<0 || bit_number>31)
+        {
+          cout<<"Invalid index. Use numbers 0 to 31."<<"\n";
           continue;
         }
       }
@@ -59,7 +63,7 @@ int main()
       }
       else
       {
-        cout << "Invalid command. Try again"<< endl;
+        cout<<"Invalid command. Make sure to input an index."<<endl;
         continue;
       }
     }
