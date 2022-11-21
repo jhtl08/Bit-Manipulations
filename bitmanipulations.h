@@ -7,9 +7,13 @@
 #ifndef BITMAN_H
 #define BITMAN_H
 
-#include <iostream>
-#include <bitset>
 
+
+// int n;                             <    these cause problems
+//extern unsigned int bit;            <    idk why
+//extern unsigned int mask;           <
+
+void biton();
 
 
     

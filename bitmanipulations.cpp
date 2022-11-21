@@ -6,7 +6,12 @@
 #include "bitmanipulations.h"
 #include <iostream>
 #include <bitset>
+#include <stdlib.h>
 
 using namespace std;
 
-
+/*void biton()
+{
+  mask <<= n;
+  bit |= mask;
+}*/
