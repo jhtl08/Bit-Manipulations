@@ -1,7 +1,7 @@
 //bitmanipulations.h
 //Kyle Coloma, Jason Lorenzo, Paolo Ong
 //ENGG 24-J
-//November 21, 2022
+//November 24, 2022
 
 
 #ifndef BITMAN_H
@@ -10,10 +10,7 @@
 #include <iostream>
 #include <bitset>
 
-
-
-    
-
+std::string bitstring(unsigned int a);
 
 
 #endif

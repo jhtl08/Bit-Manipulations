@@ -1,7 +1,7 @@
 //bitmain.cpp
 //Kyle Coloma, Jason Lorenzo, Paolo Ong
 //ENGG 24-J
-//November 21, 2022
+//November 24, 2022
 
 #include "bitmanipulations.h"
 #include <sstream>
@@ -11,17 +11,17 @@ using namespace std;
 int main()
 {
   //initialize unsigned integer
-  unsigned int bit = 0;
-  bitset<32> x(bit);
+  unsigned int a = 0;
+  bitset<32> x(a);
 
   string command;
   int bit_number;
   string input;
 
-  cout << x << endl;
+  cout << bitstring(a) << endl;
   while (true)
   {
-    unsigned int mask = 0x0F >> 3;
+    unsigned int mask = 1;
     bitset<32> y(mask);
 
     cout << "> ";
@@ -47,7 +47,8 @@ int main()
         }
         else
         {
-          cout << "Invalid command. Try again"<< endl;
+          cout<<"Invalid command. Use on, off, toggle, or exit."
+          << endl;
           continue;
         }
         if (bit_number<0 || bit_number>31)
@@ -63,10 +64,11 @@ int main()
       }
       else
       {
-        cout<<"Invalid command. Make sure to input an index."<<endl;
+        cout<<"Invalid command. Make sure to input a correct index."
+        <<endl;
         continue;
       }
     }
-  cout << x << endl;
+  cout << bitstring(x.to_ulong()) << endl;
   }
 }
